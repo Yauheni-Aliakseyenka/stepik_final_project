@@ -8,7 +8,7 @@ from .pages.basket_page import BasketPage
 
 
 def test_guest_can_go_to_login_page(browser):
-    link = "http://selenium1py.pythonanywhere.com/catalogue/the-shellcoders-handbook_209?promo=midsummer"
+    link = "http://selenium1py.pythonanywhere.com/"
     page = MainPage(browser, link)
     page.open()
     page.go_to_login_page()
@@ -31,6 +31,7 @@ def test_guest_cant_see_product_in_basket_opened_from_main_page(browser):
     page.should_be_empty_screen_text()
 
 
+@pytest.mark.need_review
 def test_guest_cant_see_product_in_basket_opened_from_product_page(browser):
     link = "http://selenium1py.pythonanywhere.com/en-gb/catalogue/the-age-of-the-pussyfoot_89/"
     page = BasketPage(browser, link)
